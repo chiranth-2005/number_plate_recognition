@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload History - PlateVision</title>
+    <style>
+        body {
+            background: #0f2027;
+            background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+            color: white;
+            font-family: sans-serif;
+            padding: 40px;
+        }
+        table {
+            width: 100%;
+            background: #1c1c1c;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #03e9f4;
+        }
+        th {
+            background: #03e9f4;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload History</h1>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Text</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for filename, text, timestamp in data %}
+        <tr>
+            <td><img src="{{ url_for('static', filename='uploads/' + filename) }}" width="120"></td>
+            <td>{{ text }}</td>
+            <td>{{ timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

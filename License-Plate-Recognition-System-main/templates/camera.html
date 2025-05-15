@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Camera Feed - PlateVision</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        #video-stream {
+            border: 4px solid #03e9f4;
+            border-radius: 10px;
+            width: 60%;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #03e9f4;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Camera Feed</h1>
+    <img id="video-stream" src="{{ url_for('video_feed') }}" alt="Camera Feed">
+    <br>
+    <a href="/index">← Back to Home</a>
+</body>
+</html>

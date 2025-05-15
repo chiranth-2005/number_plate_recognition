@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - PlateVision</title>
+    <style>
+        body {
+            background-color: #0f2027;
+            background-image: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            color: white;
+        }
+        .button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #03e9f4;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to PlateVision</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button class="button" type="submit">Upload Image</button>
+    </form>
+    <a href="{{ url_for('camera') }}" class="button">Live Camera Feed</a>
+    <a href="{{ url_for('history') }}" class="button">Upload History</a>
+    <a href="{{ url_for('logout') }}" class="button" style="background-color:red; color:white;">Logout</a>
+</body>
+</html>
