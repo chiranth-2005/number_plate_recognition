@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: number-plate-app
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: "python app.py"
